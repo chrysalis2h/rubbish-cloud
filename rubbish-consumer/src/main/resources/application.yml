@@ -1,0 +1,32 @@
+server:
+  port: 8000
+  servlet:
+    context-path: /rubbish-consumer
+
+spring:
+  application:
+    name: rubbish-cloud-consumer
+
+# eureka配置 客户端配置，注册到服务中心
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8762/eureka/
+    fetch-registry: true
+    register-with-eureka: true
+  instance:
+    prefer-ip-address: true
+feign:
+  httpclient:
+    enabled: true
+  client:
+    config:
+      default:
+        connectTimeout: 60000 # feign 的超时设置
+        readTimeout: 60000
+
+
+
+
+
+
