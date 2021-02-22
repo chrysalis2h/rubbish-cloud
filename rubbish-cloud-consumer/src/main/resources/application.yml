@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: rubbish-cloud-consumer
+server:
+  port: 8282
+  servlet:
+    context-path: /rubbish-cloud-consumer
+logging:
+  level:
+    com.chrysalis2h.consumer.client: debug
+# eureka配置 客户端配置，注册到服务中心
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8762/eureka/
+    fetch-registry: true
+    register-with-eureka: true
+  instance:
+    prefer-ip-address: true
