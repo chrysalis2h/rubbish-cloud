@@ -17,3 +17,7 @@ eureka:
     register-with-eureka: true
   instance:
     prefer-ip-address: true
+# 启用hystrix配置
+feign:
+  hystrix:
+    enabled: true

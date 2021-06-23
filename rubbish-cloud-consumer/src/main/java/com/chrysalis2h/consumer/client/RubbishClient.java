@@ -1,7 +1,9 @@
 package com.chrysalis2h.consumer.client;
 
+import com.chrysalis2h.consumer.hystrix.RubbishHystrix;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
@@ -18,10 +20,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * @Date: 2021/2/22 20:38
  * @Version: v1.0 文件初始创建
  */
-@FeignClient(name = "rubbish-cloud-provider", path = "/rubbish")
+@FeignClient(name = "rubbish-cloud-provider", path = "/rubbish", fallback = RubbishHystrix.class)
 public interface RubbishClient {
     @RequestMapping("/getRubbish")
     @ResponseBody
-    String getRubbish();
+    String getRubbish(@RequestParam(required = false) String name);
 
 }

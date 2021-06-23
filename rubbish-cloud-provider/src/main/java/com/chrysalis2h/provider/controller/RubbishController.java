@@ -4,6 +4,7 @@ import com.chrysalis2h.provider.service.IRubbishService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -14,8 +15,7 @@ public class RubbishController {
     private IRubbishService rubbishService;
 
     @GetMapping("getRubbish")
-    public String getRubbish() {
-        return "666";
-//        return rubbishService.productRubbish();
+    public String getRubbish(@RequestParam(required = false) String name) {
+        return rubbishService.productRubbish(name);
     }
 }

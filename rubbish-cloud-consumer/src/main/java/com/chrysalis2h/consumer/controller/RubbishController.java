@@ -16,9 +16,9 @@ public class RubbishController {
 
     @RequestMapping("getRubbish")
     public String getRubbish(@RequestParam(required = false) String name) {
-        if (!StringUtils.isEmpty(name)) {
-            return "hello " + name;
+        if (StringUtils.isEmpty(name)) {
+            return "~~~~~~~~~~~~~~~~~~~~~~";
         }
-        return rubbishClient.getRubbish();
+        return rubbishClient.getRubbish(name);
     }
 }
