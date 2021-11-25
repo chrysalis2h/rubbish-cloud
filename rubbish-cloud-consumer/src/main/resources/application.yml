@@ -21,3 +21,6 @@ eureka:
 feign:
   hystrix:
     enabled: true
+hystrix:
+  dashboard:
+    proxy-stream-allow-list: "localhost"
