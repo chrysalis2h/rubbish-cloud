@@ -1,0 +1,23 @@
+#端口号
+server:
+  port: 8001
+spring:
+  application:
+    name: rubbish-cloud-eureka
+#    本地存储配置的方式。
+#    设置属性spring.profiles.active=native，
+#    Config Server会默认从应用的src/main/resource目录下检索配置文件
+  profiles:
+    active: native
+#  cloud:
+#    config:
+#      server:
+#        git:
+#          # 配置git仓库的地址
+#          uri: https://github.com/chrysalis2h/rubbish-cloud/
+#          # git仓库地址下的相对地址，可以配置多个，用,分割。
+#          search-paths: config-repo
+#          # git仓库的账号
+#          username: root
+#          # git仓库的密码
+#          password: 123456

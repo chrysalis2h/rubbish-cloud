@@ -15,9 +15,10 @@
     <description>rubbish-cloud</description>
 
     <modules>
+        <module>rubbish-cloud-config</module>
+        <module>rubbish-cloud-eureka</module>
         <module>rubbish-cloud-provider</module>
         <module>rubbish-cloud-consumer</module>
-        <module>rubbish-cloud-eureka</module>
     </modules>
 
     <packaging>pom</packaging>
