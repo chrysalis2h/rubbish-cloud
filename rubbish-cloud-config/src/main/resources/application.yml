@@ -3,7 +3,7 @@ server:
   port: 8001
 spring:
   application:
-    name: rubbish-cloud-eureka
+    name: rubbish-cloud-config
 #    本地存储配置的方式。
 #    设置属性spring.profiles.active=native，
 #    Config Server会默认从应用的src/main/resource目录下检索配置文件
@@ -21,3 +21,13 @@ spring:
 #          username: root
 #          # git仓库的密码
 #          password: 123456
+
+# eureka配置 客户端配置，注册到服务中心
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8762/eureka/
+    fetch-registry: true
+    register-with-eureka: true
+  instance:
+    prefer-ip-address: true
